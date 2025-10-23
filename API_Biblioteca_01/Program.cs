@@ -15,8 +15,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Agregamos la cadena de conexión a nuestra clase de servicio en donde
-// incluimos el contexto de datos que contiene la información de la base de datos
+// Agregamos la cadena de conexiï¿½n a nuestra clase de servicio en donde
+// incluimos el contexto de datos que contiene la informaciï¿½n de la base de datos
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("conexion"));
@@ -26,11 +26,11 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+//}
 
 app.UseAuthorization();
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace API_Biblioteca_01.Models;
 
@@ -21,6 +22,7 @@ public partial class Book
 
     public DateTime? UpdatedAt { get; set; }
 
+    [JsonIgnore] // Evita el ciclo
     public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();
 
     public virtual User User { get; set; } = null!;
