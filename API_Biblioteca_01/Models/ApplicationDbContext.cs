@@ -21,7 +21,15 @@ public partial class ApplicationDbContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { }
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
+         if (!optionsBuilder.IsConfigured)
+    {
+        optionsBuilder.UseSqlServer(
+            "Server=sqlserver;Database=API_Biblioteca_01_DB;User Id=sa;Password=Abc.123456;TrustServerCertificate=True;",
+            sqlOptions => sqlOptions.EnableRetryOnFailure()
+        );
+    }
+     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
