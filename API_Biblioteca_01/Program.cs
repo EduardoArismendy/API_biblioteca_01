@@ -19,7 +19,7 @@ builder.Services.AddSwaggerGen();
 // incluimos el contexto de datos que contiene la informaci�n de la base de datos
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("conexion"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
  
 

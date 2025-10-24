@@ -1,4 +1,4 @@
-
+version: '3.9'
 
 services:
   sqlserver:
@@ -6,7 +6,7 @@ services:
     container_name: sqlserver
     environment:
       - ACCEPT_EULA=Y
-      - SA_PASSWORD=
+      - SA_PASSWORD=Abc.123456
     ports:
       - "1433:1433"
     volumes:
@@ -23,7 +23,7 @@ services:
       - sqlserver
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=API_Biblioteca_01_DB;User Id=sa;Password=;TrustServerCertificate=True;
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=API_Biblioteca_01_DB;User Id=sa;Password=Abc.123456;TrustServerCertificate=True;
     networks:
       - app_network
 
